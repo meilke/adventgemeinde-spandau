@@ -1,0 +1,16 @@
+title: Adventgemeinde Berlin-Spandau
+email: christian.meilke@googlemail.com
+baseurl: ""
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
+markdown: kramdown
+
+contentful:
+  spaces:
+    - spandau:
+        space: my-space
+        access_token: my-token
+        client_options:
+          api_url: 'preview.contentful.com'
