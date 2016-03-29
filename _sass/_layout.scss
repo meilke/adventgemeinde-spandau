@@ -243,7 +243,7 @@
 
 .frontpage-container {
   overflow: auto;
-  margin: 0;
+  margin-bottom: 20px;
   padding: 0 0 3px 2px;
 }
 
@@ -260,4 +260,13 @@
 .frontpage-image {
   float: right;
   width: 50%;
+}
+
+.frontpage-footer {
+  clear: both;
+}
+
+.frontpage-map {
+  width: 100%;
+  height: 400px;
 }

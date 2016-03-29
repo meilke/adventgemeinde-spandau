@@ -4,6 +4,27 @@ layout: default
 
 <div class="home">
 
+  <script>
+  
+    function addMarker(location, map) {
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+  
+    function initMap() {
+      var mapDiv = document.getElementById('map');
+      var home = { lng: 13.207270, lat: 52.527902 };
+      var map = new google.maps.Map(mapDiv, {
+        center: home,
+        zoom: 15
+      });
+      addMarker(home, map);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
   {% for frontpage in site.data.contentful.spaces.spandau.frontpage %}
     <h1 class="page-heading">{{ frontpage.title }}</h1>
     <div class="frontpage-container">
@@ -11,24 +32,33 @@ layout: default
       <div class="frontpage-image">
         <img src="{{ frontpage.image }}" alt="" />
       </div>
+      <div class="frontpage-footer">{{ frontpage.lastUpdated | date: '%B %d, %Y' }}</div>
     </div>
-    <div>{{ frontpage.lastUpdated }}</div>
+    
   {% endfor %}
+  
+  <h1 class="page-heading">Wie Sie uns finden k&#246;nnen? Sie stehen schon mitten auf dem Grundst&#252;ck...</h1>
+  
+  <div>
+    <img  style="width: 100%;" alt="My Home is..." title="My Home is..."
+          src="http://www.adventgemeinde-spandau.de/mediapool/21/218207/resources/11683843.jpg" />
+  </div>
 
-  <h1 class="page-heading">Posts</h1>
+  <div>
+    &nbsp;
+  </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div>
+    ... im Tiefwerder Weg 5-7 in 13597 Berlin
+    (Spandau!)
+  </div>
+  
+  <div class="frontpage-map" id="map"></div>
+  
+  <br>
+  
+  <p><b>Bitte beachten Sie:</b></p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <p>Google Maps zeigt den Standort der Gemeinde leider nicht korrekt an: unser Haus befindet sich im n&#246;rdlichen Teil des Tiefwerderwegs in unmittelbarer N&#228;he zur Ruhlebener Stra&#223;e.</p>
 
 </div>
