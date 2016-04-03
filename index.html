@@ -1,64 +1,53 @@
 ---
-layout: default
+title: Home
+layout: landing
+published: true
+order: 1
 ---
+ 
+<!-- Main -->
+	<!--<div id="main" class="wrapper style1">
+		<section class="container">-->
+			<!--<header class="major">
+				<h2>Nulla luctus eleifend</h2>
+				<span class="byline">Mauris vulputate dolor sit amet nibh</span>
+			</header>-->
+			<!--<div class="row">-->
 
-<div class="home">
+				<!-- Content -->
+					<!--<div class="6u">
+						<section>
+							<ul class="style">
+								<li>
+									<span class="fa fa-wrench"></span>
+									<h3>Integer ultrices</h3>
+									<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim.</span>
+								</li>
+								<li>
+									<span class="fa fa-cloud"></span>
+									<h3>Aliquam luctus</h3>
+									<span>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="6u">
+						<section>
+							<ul class="style">
+								<li>
+									<span class="fa fa-cogs"></span>
+									<h3>Integer ultrices</h3>
+									<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim.</span>
+								</li>
+								<li>
+									<span class="fa fa-leaf"></span>
+									<h3>Aliquam luctus</h3>
+									<span>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span>
+								</li>
+							</ul>
+						</section>
+					</div>
 
-  <script>
-  
-    function addMarker(location, map) {
-      var marker = new google.maps.Marker({
-        position: location,
-        map: map
-      });
-    }
-  
-    function initMap() {
-      var mapDiv = document.getElementById('map');
-      var home = { lng: 13.207270, lat: 52.527902 };
-      var map = new google.maps.Map(mapDiv, {
-        center: home,
-        zoom: 15
-      });
-      addMarker(home, map);
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-
-  {% for frontpage in site.data.contentful.spaces.spandau.frontpage %}
-    <h1 class="page-heading">{{ frontpage.title }}</h1>
-    <div class="frontpage-container">
-      <div class="{% if frontpage.image %}frontpage-half{% else %}frontpage-full{% endif %}">{{ frontpage.content | markdownify }}</div> 
-      <div class="frontpage-image">
-        <img src="{{ frontpage.image }}" alt="" />
-      </div>
-      <div class="frontpage-footer">{{ frontpage.lastUpdated | date: '%B %d, %Y' }}</div>
-    </div>
-    
-  {% endfor %}
-  
-  <h1 class="page-heading">Wie Sie uns finden k&#246;nnen? Sie stehen schon mitten auf dem Grundst&#252;ck...</h1>
-  
-  <div>
-    <img  style="width: 100%;" alt="My Home is..." title="My Home is..."
-          src="http://www.adventgemeinde-spandau.de/mediapool/21/218207/resources/11683843.jpg" />
-  </div>
-
-  <div>
-    &nbsp;
-  </div>
-
-  <div>
-    ... im Tiefwerder Weg 5-7 in 13597 Berlin
-    (Spandau!)
-  </div>
-  
-  <div class="frontpage-map" id="map"></div>
-  
-  <br>
-  
-  <p><b>Bitte beachten Sie:</b></p>
-
-  <p>Google Maps zeigt den Standort der Gemeinde leider nicht korrekt an: unser Haus befindet sich im n&#246;rdlichen Teil des Tiefwerderwegs in unmittelbarer N&#228;he zur Ruhlebener Stra&#223;e.</p>
-
-</div>
+			</div>-->
+		<!--</section>
+	</div>-->

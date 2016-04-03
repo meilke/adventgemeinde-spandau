@@ -1,16 +1,13 @@
-title: Adventgemeinde Berlin-Spandau
-email: info@adventgemeinde-spandau.de
-baseurl: ""
-url: "http://www.adventgemeinde-spandau.de"
-twitter_username: jekyllrb
-github_username:  jekyll
-
-markdown: kramdown
+name: Horizons
+description: Horizons template for Jekyll
+paginate: 10
+baseurl: 'http://meilke.github.io/adventgemeinde-spandau-preview'
+gems: [jekyll-paginate, contentful]
 
 contentful:
   spaces:
     - spandau:
-        space: my-space
-        access_token: my-token
+        space: space-id
+        access_token: access-token
         client_options:
           api_url: 'preview.contentful.com'
