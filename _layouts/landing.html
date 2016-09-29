@@ -34,18 +34,12 @@ layout: default
 			<span class="byline">Mauris vulputate dolor sit amet nibh</span>
 		</header>-->
 		<div class="row no-collapse-1">
+			{% for topic in site.data.contentful.spaces.spandau.topic %}
 			<section class="4u">
-				<a href="#" class="image feature"><img src="{{ site.baseurl }}/assets/images/gemeinde1.jpg" alt=""></a>
-				<p>Sie sehnen sich danach, Ihren Glauben Tag für Tag aktiv zu leben?</p>
+				<a href="#" class="image feature"><img src="{{ topic.image.url }}" alt="{{ topic.name }}" title="{{ topic.name }}"></a>
+				<p>{{ topic.description }}</p>
 			</section>
-			<section class="4u">
-				<a href="#" class="image feature"><img src="{{ site.baseurl }}/assets/images/gemeinde2.jpg" alt=""></a>
-				<p>Sie suchen Gleichgesinnte, mit denen Sie Erfahrungen und Erkenntnisse austauschen können?</p>
-			</section>
-			<section class="4u">
-				<a href="#" class="image feature"><img src="{{ site.baseurl }}/assets/images/gemeinde3.jpg" alt=""></a>
-				<p>Sie interessieren sich für Glauben und Leben in der heutigen Zeit? Dann hoffen wir, Ihnen mit diesen Seiten weiterhelfen zu können.</p>
-			</section>
+			{% endfor %}
 		</div>
 		<div class="row no-collapse-1">
 			<section class="12u">
