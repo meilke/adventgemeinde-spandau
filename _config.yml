@@ -4,6 +4,10 @@ paginate: 10
 baseurl: 'http://meilke.github.io/adventgemeinde-spandau-preview'
 gems: [jekyll-paginate, contentful]
 
+topic_src_dir: '_src'
+data_dir: '_data'
+data_file: 'contentful/spaces/spandau.yaml'
+
 contentful:
   spaces:
     - spandau:

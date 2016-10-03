@@ -1,0 +1,17 @@
+---
+layout: main
+title: Themenbereich-Seite
+published: true
+order: 200
+topic: true
+---
+
+<div>
+  {{ page.topic.description }}
+</div>
+{% for activity in page.topic.activities %}
+<div>
+  <div>{{ activity.title }}</div>
+  <div>{{ activity.description }}</div>
+</div>
+{% endfor %}

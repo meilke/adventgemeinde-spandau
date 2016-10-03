@@ -35,10 +35,12 @@ layout: default
 		</header>-->
 		<div class="row no-collapse-1">
 			{% for topic in site.data.contentful.spaces.spandau.topic %}
-			<section class="4u">
-				<a href="#" class="image feature"><img src="{{ topic.image.url }}" alt="{{ topic.name }}" title="{{ topic.name }}"></a>
-				<p>{{ topic.description }}</p>
-			</section>
+				<section class="4u">
+					<a href="{{ '/topic/' | append: topic.urlpart| append: '.html' }}" class="image feature">
+						<img src="{{ topic.image.url }}" alt="{{ topic.name }}" title="{{ topic.name }}">
+					</a>
+					<p>{{ topic.description }}</p>
+				</section>
 			{% endfor %}
 		</div>
 		<div class="row no-collapse-1">

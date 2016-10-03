@@ -25,10 +25,20 @@
 			</li>-->
 			{% for my_page in pages %}
         {% if my_page.title %}
-          {% unless my_page.hidden %}
+          {% unless my_page.hidden or my_page.topic %}
             <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
           {% endunless %}
         {% endif %}
       {% endfor %}
+			<li>
+				<a href="">Themen</a>
+				<ul>
+					{% for my_page in pages %}
+		        {% if my_page.topic %}
+		          <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+		        {% endif %}
+		      {% endfor %}
+		  	</ul>
+		  </li>
 		</ul>
 	</nav>

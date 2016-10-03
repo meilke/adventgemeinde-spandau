@@ -74,17 +74,10 @@ module Jekyll
       self.data[label] = data
     end
 
-    def set_product_data( product, prev_product, next_product )
-      self.data['product'] = product
-      self.data['product_prev'] = prev_product
-      self.data['product_next'] = next_product
-      title = product['title']
-      # Set the title for this page.
-      title_prefix             = site.config['product_title_prefix'] || ''
-      self.data['title']       = "#{title_prefix}#{title}"
-      # Set the meta-description for this page.
-      meta_description_prefix  = site.config['category_meta_description_prefix'] || 'Product: '
-      self.data['description'] = "#{meta_description_prefix}#{product['title']}"
+    def set_topic_data(topic)
+      title = topic['title']
+      self.data['title']       = title
+      self.data['description'] = title
     end
 
     # Override so that we can control where the destination file goes
@@ -186,12 +179,14 @@ module Jekyll
   class Site
 
     def write_all_topic_files
-      yaml_filename = self.config['data_product_file']
+      yaml_filename = self.config['data_file']
       data_hash = read_data_object_yaml( yaml_filename )
-      products_src_dir = self.config['products_src_dir'] || '_products'
+      products_src_dir = self.config['topic_src_dir'] || '_src'
       data_hash['data']['topic'].each_with_index do |topic, index|
-        p = TopicPage.new( self, self.config['source'], 'products', index.to_s + '.html', products_src_dir, 'topic' )
-        p.set_data( 'topic', topic )
+        p = TopicPage.new(self, self.config['source'], 'topic', topic['urlpart'] + '.html', products_src_dir, 'topic')
+        topic['order'] = 200 + index
+        p.set_data('topic', topic)
+        p.set_topic_data(topic)
         p.render(self.layouts, site_payload)
         p.write(self.dest)
         self.pages << p
