@@ -6,12 +6,25 @@ order: 200
 topic: true
 ---
 
-<div>
-  {{ page.topic.description }}
+<div id="main" class="wrapper style1">
+  <div class="container">
+    <div class="row no-collapse-1">
+      <section>
+        <header class="major">
+          <h2>{{ page.topic.title }}</h2>
+        </header>
+        {{ page.topic.description }}
+      </section>
+    </div>
+    {% for activity in page.topic.activities %}
+      <div class="row no-collapse-1">
+        <section>
+          <header class="major">
+            <h3>{{ activity.title }}</h3>
+          </header>
+          {{ activity.description }}
+        </section>
+      </div>
+    {% endfor %}
+  </div>
 </div>
-{% for activity in page.topic.activities %}
-<div>
-  <div>{{ activity.title }}</div>
-  <div>{{ activity.description }}</div>
-</div>
-{% endfor %}
