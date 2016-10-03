@@ -39,7 +39,7 @@ layout: default
 					<a href="{{ '/topic/' | append: topic.urlpart| append: '.html' }}" class="image feature">
 						<img src="{{ topic.image.url }}" alt="{{ topic.name }}" title="{{ topic.name }}">
 					</a>
-					<p>{{ topic.description }}</p>
+					<p>{{ topic.title }}</p>
 				</section>
 			{% endfor %}
 		</div>

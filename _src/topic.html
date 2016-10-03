@@ -13,7 +13,7 @@ topic: true
         <header class="major">
           <h2>{{ page.topic.title }}</h2>
         </header>
-        {{ page.topic.description }}
+        {{ page.topic.description | markdownify }}
       </section>
     </div>
     {% for activity in page.topic.activities %}
@@ -22,7 +22,7 @@ topic: true
           <header class="major">
             <h3>{{ activity.title }}</h3>
           </header>
-          {{ activity.description }}
+          {{ activity.description | markdownify }}
         </section>
       </div>
     {% endfor %}
